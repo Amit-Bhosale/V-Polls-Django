@@ -1,0 +1,70 @@
+{% extends 'layout.html'  %}
+
+
+{%block title%} Ongoing Vote {%endblock%}
+
+{%block body %}
+{% load static %}
+<!-- Carousel-->
+    <link rel="stylesheet" href="{% static 'css/blogpost.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/mobile.css'%}">
+    <div class="max-width-1 m-auto">
+        <hr>
+    </div>
+    
+
+
+   
+     <div class="alert alert-danger alert-dismissible " role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+        <strong>
+           Scroll Down to See the Ongoing Votings........ &#x21e3;<br>
+           Hurry up and VOTE      
+        </strong>    
+      </div>
+
+
+
+
+    <div class="home-articles max-width-1 m-auto font2">
+        <h2>OnGoing Voting</h2>
+
+
+    
+      
+        
+
+    <div class="home-article">
+        {% for vote in vote %}
+            <div class="home-article-img">
+                <img src="/media/{{vote.img}}" alt="article">
+            </div>
+            <div class="home-article-content font1">
+                <a href="/blogpost.html">
+                    <h3>{{vote.quetion}}</h3>
+                </a>
+
+                <div>{{vote.creator_name}}</div>
+                <span>{{vote.date}}</span>
+                <span class="pull-right">
+                        <a href="/vote/{{vote.vote_id}}" class="btn btn-info btn-xs">Vote</a> &nbsp;
+                    </span>
+            </div>
+            {% if forloop.counter|divisibleby:1 %}
+             </div><div class="home-article">
+            {% endif%}
+            {% endfor %}
+
+        </div> 
+
+
+
+
+
+
+
+{% endblock %}
+
+
+

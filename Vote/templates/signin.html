@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>SignIN</title>
+
+    
+
+    <!-- Bootstrap core CSS -->
+    
+
+    <!-- Custom styles for this template -->
+    
+  </head>
+
+<style>
+  body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+</style>
+
+  {% load static %}
+    <div class="row">
+   
+    
+  </div>
+</div>
+ 
+  <body class="text-center">
+
+    <form class="form-signin" method="post">{% csrf_token %}
+      <img class="mb-4" src="{% static 'media/voting.jpeg'%}" alt="iBlog" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Online Voting</h1>
+      <h4 class="h3 mb-3 font-weight-normal">Login</h4>
+      <label for="inputname" class="sr-only">Name</label>
+      <input type="text" id="inputname" class="form-control" placeholder="User Name"  name="username" >
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password">
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block"type="submit">Sign in</button><br>
+      
+      <table class="table">
+      <tbody>
+      <tr>
+      <th scope="row"><a href="/register"><button class="btn btn-lg btn-danger btn-block" type="button"> Register </button></a></th>
+      <th scope="row"><a href="/admin/"><button class="btn btn-lg btn-dark btn-block" type="button">Admin</button></a></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+      <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
+    </form>
+   
+    </body>
+
+</html>

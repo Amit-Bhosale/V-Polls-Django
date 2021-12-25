@@ -1,0 +1,91 @@
+{% extends 'layout.html'  %}
+
+{%block title%} {%endblock%}
+{%block body%} 
+
+           
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <b><h4 class="panel-title">Cast Your Vote</h4></b>
+            </div>
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>{{ poll.quetion }}</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <hr />
+                        
+
+                        
+                        <div class='container'>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="poll" value="option1" required>
+                                        {{ poll.option_one }}
+                                    </label> &nbsp;
+                                    <label>
+                                        <input type="radio" name="poll" value="option2">
+                                        {{ poll.option_two }}
+                                    </label> &nbsp;
+                                    <label>
+                                        <input type="radio" name="poll" value="option3">
+                                        {{ poll.option_three }}
+                                    </label> &nbsp;
+                                    <label>
+                                        <input type="radio" name="poll" value="option4">
+                                        {{ poll.option_four }}
+                                    </label> &nbsp;
+                                </div>
+                            </div>
+                            
+                            <hr />
+
+                            <button name="submit" id='submit' type="submit" class="d-grid gap-2 col-6 mx-auto  btn btn-info">
+                                Submit
+                            </button>
+
+
+                        </form>
+                    </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+{%endblock%}
+
+
+
+
+
+{% block js %}
+ 
+ <script>
+
+$('#submit')
+{% if submit %}
+alert('Thank You For Voting ...Your Vote has been Recorded ');
+document.location ="/";
+{% endif %}
+
+</script>   
+{% endblock %}

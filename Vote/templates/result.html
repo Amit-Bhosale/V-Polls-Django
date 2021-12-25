@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block body %}
+
+
+
+
+
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Vote Result</h4><br>
+            </div>
+
+            <div class="panel-body">
+                <h3>{{ poll.quetion }}</h3>
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item">{{poll.option_one}} &mdash; <strong>{{poll.option_one_count}}</strong></li>
+                <li class="list-group-item">{{poll.option_two}} &mdash; <strong>{{poll.option_two_count}}</strong></li>
+                <li class="list-group-item">{{poll.option_three}} &mdash; <strong>{{poll.option_three_count}}</strong></li>
+                <li class="list-group-item">{{poll.option_four}} &mdash; <strong>{{poll.option_four_count}}</strong></li>
+            </ul>
+            <h4>Total Votes&mdash; <strong>{{poll.total}}</strong><br><h4>
+
+            <div class="container mx-5 my-5">
+                
+
+               <h4><center> Higest Number of Vote Goes To :<strong> {{msg}}</strong></center><h4>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

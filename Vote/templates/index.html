@@ -1,0 +1,95 @@
+{% extends 'layout.html'  %}
+
+{%block title%}Online Voting{%endblock%}
+
+
+{%block body %}
+{% load static %}
+<!-- Carousel-->
+	<link rel="stylesheet" href="{% static 'css/blogpost.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/mobile.css'%}">
+	<div class="max-width-1 m-auto">
+        <hr>
+    </div>
+    <div class="m-auto content max-width-1 my-2">
+        <div class="content-left">
+            <h1>Online Voting</h1>
+            <p>When making a decision, those concerned seek one outcome: a majority opinion for a single decision or a single prioritisation. There are several ways in which voters and/or elected representatives may seek to identify that majority opinion. There is the simple, weighted or consociational majority vote. There are other multi-option procedures as well; these include two-round voting, the alternative vote AV, (which is also known as instant run-off voting IRV, and the single transferable vote STV), approval voting, a Borda Count BC, the Modified Borda Count MBC, and the Condorcet rule, nearly all of which are also used as electoral systems.</p>
+            <h4><p style="color: blue">Welcome : {{username}}</p></h4>
+        </div>
+        <div class="content-right">
+            <img src="{% static 'media/voting.jpeg'%}" alt="iBlog">
+        </div>
+    </div>
+
+
+    <div class="max-width-1 m-auto">
+        <hr>
+    </div>
+
+     <div class="alert alert-danger alert-dismissible " role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+        <strong>
+           Scroll Down to See the Ongoing Votings........ &#x21e3;<br>
+           Hurry up and VOTE      
+        </strong>    
+      </div>
+
+
+
+
+    <div class="home-articles max-width-1 m-auto font2">
+        <h2>OnGoing Voting</h2>
+
+
+    
+      
+        
+
+    <div class="home-article">
+    	{% for vote in vote %}
+            <div class="home-article-img">
+                <img src="/media/{{vote.img}}" alt="article">
+            </div>
+            <div class="home-article-content font1">
+                <a href="/blogpost.html">
+                    <h3>{{vote.quetion}}</h3>
+                </a>
+
+                <div>{{vote.creator_name}}</div>
+                <span>{{vote.date}}</span>
+                <span class="pull-right">
+                        <a href="/vote/{{vote.vote_id}}" class="d-grid gap-2 col-6 mx-auto btn btn-outline-primary my-2 my-sm-0">Vote</a> &nbsp;
+                         
+                    </span>
+            </div>
+            {% if forloop.counter|divisibleby:1 %}
+             </div><div class="home-article">
+            {% endif%}
+            {% endfor %}
+
+        </div> 
+</div>
+
+        <div class="footer">
+        <p>Copyright &copy; VotingBooth.com </p>
+        <a href="http://http://127.0.0.1:8000/">Vector Credits: Vecteezy</a>
+    </div>
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
